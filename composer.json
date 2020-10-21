@@ -1,0 +1,10 @@
+{
+  "name": "eagle-eye-solutions/sparrow",
+  "description": "A simple but powerful database toolkit.",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "EagleEyeSolutions\\Sparrow\\": "src"
+    }
+  }
+}

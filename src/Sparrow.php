@@ -1,4 +1,7 @@
 <?php
+
+namespace EagleEyeSolutions\Sparrow;
+
 /**
  * Sparrow: A simple database toolkit.
  *
@@ -192,7 +195,7 @@ class Sparrow {
                 $condition = '=';
             }
 
-            if (empty($join)) { 
+            if (empty($join)) {
                 $join = ($field{0} == '|') ? ' OR' : ' AND';
             }
 
@@ -314,7 +317,7 @@ class Sparrow {
      *
      * @param string $field Field name
      * @return object Self reference
-     */ 
+     */
     public function sortAsc($field) {
         return $this->orderBy($field, 'ASC');
     }
@@ -324,9 +327,9 @@ class Sparrow {
      *
      * @param string $field Field name
      * @return object Self reference
-     */ 
+     */
     public function sortDesc($field) {
-        return $this->orderBy($field, 'DESC');        
+        return $this->orderBy($field, 'DESC');
     }
 
     /**
@@ -688,7 +691,7 @@ class Sparrow {
                     $this->db = new PDO('sqlite:/'.$db['database']);
                     $db['type'] = 'pdo';
 
-                    break; 
+                    break;
             }
 
             if ($this->db == null) {
@@ -721,7 +724,7 @@ class Sparrow {
 
     /**
      * Gets the database type.
-     * 
+     *
      * @param object|resource $db Database object or resource
      * @return string Database type
      */
@@ -934,7 +937,7 @@ class Sparrow {
                 case 'pdo':
                     $data = $result->fetchAll(PDO::FETCH_ASSOC);
                     $this->num_rows = sizeof($data);
- 
+
                     break;
 
                 case 'mysqli':
@@ -948,7 +951,7 @@ class Sparrow {
                     }
                     $result->close();
                     break;
-           
+
                 case 'mysql':
                     while ($row = mysql_fetch_assoc($result)) {
                         $data[] = $row;
@@ -1088,7 +1091,7 @@ class Sparrow {
             'avg_value',
             $key,
             $expire
-        ); 
+        );
     }
 
     /**
@@ -1422,7 +1425,7 @@ class Sparrow {
 
         return $object;
     }
-   
+
     /**
      * Finds and populates an object.
      *
